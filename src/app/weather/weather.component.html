@@ -1,0 +1,21 @@
+<div>
+  <input type="text" name="" value="" #cityName>
+  <button type = "button" name="button" (click)="getWeather(cityName.value)">
+    Search</button>
+  <table>
+    <tr *ngIf = "this.currentCityWeather !==undefined">
+      <td>{{this.currentCityWeather.cityName}}</td>
+      <td *ngFor="let v of this.currentCityWeather.weatherValues.split(',')">
+      {{v}}</td>
+      <td>{{this.currentCityWeather.searchTime}}</td>
+      </table>
+</div>
+PastSearches
+<table>
+  <tr *ngFor ="let pastCity of this.pastCityWeathers">
+    <td>{{pastCity.cityName}}</td>
+    <td *ngFor="let v of pastCity.weatherValues.split(',')">
+    {{v}}</td>
+    <td>{{pastCity.searchTime}}</td>
+    </tr>
+    </table>
